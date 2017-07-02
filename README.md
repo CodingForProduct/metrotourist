@@ -12,8 +12,9 @@ A quick guide on how to get to the places / sights you want to go to using publi
 First time tourist to Los Angeles
 She’s heard of sites she wants to see but doesn’t want to miss something she does not know about.
 She’s heard about the traffic problems and would prefer not to drive in unknown territory.
-She’s traveling on a budget and doesn’t want to pay for rental car, taxi/uber, parking fees when avoidable.
-She can see find locations and directions on Google Maps Google Maps, but doesn’t want to figure out how to connect multiple destinations and times.
+She’s traveling on a budget and wants to avoid fees for rental car, taxi/uber, and parking.
+She can find locations and directions on Google Maps Google Maps, 
+but doesn’t want to figure out how to connect multiple destinations and times.
 ```
 | Inga's Story | Motivation |
 | --- | --- |
@@ -26,7 +27,8 @@ She can see find locations and directions on Google Maps Google Maps, but doesn�
 **Karen**
 ```
 A local day tourist, interested in sightseeing alone or with kids.
-She’s likely traveling to specific destinations, week-end events, museum exhibitions, festivals, farmer’s markets something she’s seen on TimeOut Los Angeles / Eventbrite)
+She’s likely traveling to specific destinations: week-end events, museum exhibitions, festivals, 
+farmer’s markets (or just something she’s seen on TimeOut Los Angeles / Eventbrite).
 She wants to avoid looking for parking and paying $10 to 30/hour.
 Pub crawling - normally drives but wants to drink with friends.
 ```
