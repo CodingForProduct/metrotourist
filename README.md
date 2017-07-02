@@ -31,10 +31,10 @@ She wants to avoid looking for parking and paying $10 to 30/hour.
 Pub crawling - normally drives but wants to drink with friends.
 ```
 # Minimum Viable Product
-View 1 - Select tour option: Preview tour options. Hover on individual location for details. Submit tour selection. 
-View 2 - Input start station, start time period, return home period (dummy calendar day choice)
-View 3 - Displays timetable with start and return times (dummy map drop pin). Select desired travel times. 
-View 4 - Display itinerary. Start time, Arrival time, Departure time, time they get home
+- View 1 - Select tour option: Preview tour options. Hover on individual location for details. Submit tour selection. 
+- View 2 - Input start station, start time period, return home period (dummy calendar day choice)
+- View 3 - Displays timetable with start and return times (dummy map drop pin). Select desired travel times. 
+- View 4 - Display itinerary. Start time, Arrival time, Departure time, time they get home
 
 Bonus Options: Alert choices (viable if phone app), map with active drop pins.
 
