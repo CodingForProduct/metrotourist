@@ -24,7 +24,7 @@ but doesn’t want to figure out how to connect multiple destinations and times.
 | --- | --- |
 | Travelocity, Expedia, Travel Guides, Friends that have visited LA before. | She wants to get to her destination without hassle, and have the flexibility to stay longer or leave earlier. |
 
-**Karen**
+**Karen (LA Resident)**
 ```
 A local day tourist, interested in sightseeing alone or with kids.
 She’s likely traveling to specific destinations: week-end events, museum exhibitions, festivals, 
