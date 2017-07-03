@@ -6,11 +6,6 @@ app.get('/', function (req, res) {
     res.status(200).send('Hello World!')
 })
 
-app.get('/foo', function (req, res) {
-    res.status(200)
-    .send({foo: 1, bar: 'abc', something: req.query.baz})
-})
-
 app.get('/add', function (req, res) {
     res.status(200)
     .send({
