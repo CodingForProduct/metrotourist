@@ -30,6 +30,7 @@ class SampleForm extends Component {
     render() {
         return (
             <div>
+                <p>This is a sample form to test an API call:</p>
                 <form onSubmit={this.handleFormSubmit}>
                     Input One:
                     <input type="text" name="inputOne" />
