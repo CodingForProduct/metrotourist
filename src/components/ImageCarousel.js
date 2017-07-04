@@ -5,7 +5,7 @@ class ImageCarousel extends Component {
   render() {
     return (
       <div>
-          <p>Add image carousel here.</p>
+          <h3>Add image carousel here.</h3>
       </div>
     );
   }
