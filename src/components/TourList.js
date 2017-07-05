@@ -7,8 +7,10 @@ class TourList extends Component {
     constructor(){
         super()
         this.state = {
-            tourListings: null
+            tourListings: null,
+            selectedTour: null
         }
+        this.handleTourSelection = this.handleTourSelection.bind(this)
     }
     componentWillMount(){
         const url = 'http://localhost:3001/tours'
@@ -19,6 +21,11 @@ class TourList extends Component {
             })
         })
     }
+    handleTourSelection(tour) {
+        this.setState((prev, props) => {
+            return {selectedTour: tour}
+        })
+    }
 
     render() {
         let tourNames = []
@@ -26,7 +33,9 @@ class TourList extends Component {
         if (this.state.tourListings) {
         tourNames = this.state.tourListings.map(
             (tourListing) => {
-            return <li key={tourListing.id}>{tourListing.name}</li>
+            return <li key={tourListing.id} onClick={() => this.handleTourSelection(tourListing)}>
+                {tourListing.name}
+            </li>
         })}
         return (
             <div>
@@ -34,10 +43,7 @@ class TourList extends Component {
                 <ul>{tourNames}</ul>
 
                 {/*Show and hide TourDetails or ImageCarousel here.*/}
-
-                <ImageCarousel />
-                <TourDetails />
-
+                {this.state.selectedTour ? <TourDetails tour={this.state.selectedTour} /> : <ImageCarousel />}
             </div>
         );
     }

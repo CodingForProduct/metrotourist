@@ -3,13 +3,18 @@ import React, { Component } from 'react';
 
 class TourDetails extends Component {
   render() {
+
+     let tourDestinations = this.props.tour.destinations.map((tourDestination) => {
+         return <li key={tourDestination}>
+             {tourDestination}
+         </li>
+     })
+
     return (
       <div>
-        <h3>Explore Hollywood!</h3>
+        <h3>Explore {this.props.tour.name}!</h3>
         <ul>
-            <li>HardRock Cafe</li>
-            <li>Chinese Theater</li>
-            <li>Walk of Stars</li>
+            {tourDestinations}
         </ul>
       </div>
     );

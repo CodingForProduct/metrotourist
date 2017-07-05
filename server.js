@@ -10,10 +10,10 @@ app.get('/', function (req, res) {
 
 //array of tours
 const tourOptions = [
-  { id: 1, name: "Hollywood" },
-  { id: 2, name: "Downtown LA" },
-  { id: 3, name: "Santa Monica" },
-  { id: 4, name: "Culver City"},
+  { id: 1, name: "Hollywood", destinations: ["HardRock", "Chinese Theater", "Walk of Stars"]},
+  { id: 2, name: "Downtown LA", destinations: ["Pershing Square", "Angel's Flight"]},
+  { id: 3, name: "Santa Monica", destinations: ["The Pier", "3rd Street Promenade"] },
+  { id: 4, name: "Culver City", destinations: ["Culver Hotel", "The Culver City Stairs", "Baldwin Hills Scenic Overlook"]},
 ];
 
 // display list of users
