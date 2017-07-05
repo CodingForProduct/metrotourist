@@ -1,26 +1,46 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import ImageCarousel from './ImageCarousel'
 import TourDetails from './TourDetails'
+import axios from 'axios'
 
 class TourList extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Checkout these great tours:</h1>
-        <ul>
-            <li>Hollywood</li>
-            <li>Downtown LA</li>
-            <li>Santa Monica</li>
-        </ul>
+    constructor(){
+        super()
+        this.state = {
+            tourListings: null
+        }
+    }
+    componentWillMount(){
+        const url = 'http://localhost:3001/tours'
+        return axios.get(url, null)
+        .then((response) => {
+            return this.setState((prevState, props) => {
+                return {tourListings: response.data}
+            })
+        })
+    }
 
-{/*Show and hide TourDetails or ImageCarousel here.*/}
+    render() {
+        let tourNames = []
 
-        <ImageCarousel />
-        <TourDetails />
+        if (this.state.tourListings) {
+        tourNames = this.state.tourListings.map(
+            (tourListing) => {
+            return <li key={tourListing.id}>{tourListing.name}</li>
+        })}
+        return (
+            <div>
+                <h3>Explore Los Angeles</h3>
+                <ul>{tourNames}</ul>
 
-      </div>
-    );
-  }
+                {/*Show and hide TourDetails or ImageCarousel here.*/}
+
+                <ImageCarousel />
+                <TourDetails />
+
+            </div>
+        );
+    }
 }
 
 export default TourList;
