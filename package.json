@@ -1,9 +1,14 @@
 {
-  "name": "metro-web",
+  "name": "Metro-Tourist",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.1",
+    "nodemon": "^1.11.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
@@ -12,6 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-api": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
