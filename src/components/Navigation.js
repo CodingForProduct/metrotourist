@@ -5,7 +5,7 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        <p>Add navigation bar here</p>
+        <p>Add navigation bar here.</p>
         <SearchBar />
       </div>
     );
