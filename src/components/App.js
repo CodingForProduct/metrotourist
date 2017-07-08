@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Navigation from './Navigation'
 import SampleForm from './SampleForm'
 import TourList from './TourList'
+import YouTubeSearch from './YouTubeSearch'
 
 
 
@@ -10,6 +11,7 @@ class App extends Component {
     return (
       <div>
         <Navigation />
+        <YouTubeSearch />
         <TourList />
         <SampleForm />
       </div>
