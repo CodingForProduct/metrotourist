@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ImageCarousel from './ImageCarousel'
 import TourDetails from './TourDetails'
+import TourListItem from './TourListItem'
 import axios from 'axios'
 
 class TourList extends Component {
@@ -31,22 +32,21 @@ class TourList extends Component {
         let tourNames = []
 
         if (this.state.tourListings) {
-        tourNames = this.state.tourListings.map(
-            (tourListing) => {
-            return <li key={tourListing.id} onClick={() => this.handleTourSelection(tourListing)}>
-                {tourListing.name}
-            </li>
-        })}
-        return (
-            <div>
-                <h3>Explore Los Angeles</h3>
-                <ul>{tourNames}</ul>
+            tourNames = this.state.tourListings.map(
+                (tourListing) => {
+                    return <TourListItem key={tourListing.id} tourListing={tourListing} handleClick={this.handleTourSelection} />
+                })}
+                return (
+                    <div>
+                        {/*Show and hide TourDetails or ImageCarousel here.*/}
+                        {this.state.selectedTour ? <TourDetails tour={this.state.selectedTour} /> : <ImageCarousel />}
+                        <ul className="col-md-4 list-group">
+                            {tourNames}
+                        </ul>
 
-                {/*Show and hide TourDetails or ImageCarousel here.*/}
-                {this.state.selectedTour ? <TourDetails tour={this.state.selectedTour} /> : <ImageCarousel />}
-            </div>
-        );
-    }
-}
+                    </div>
+                );
+            }
+        }
 
-export default TourList;
+        export default TourList;

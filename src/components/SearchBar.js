@@ -10,11 +10,12 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
+          <p>Search Los Angeles Attractions: </p>
         <input
           value={this.state.term}
           onChange={event => this.onInputChange(event.target.value)}
         />
-        ex. Downtown LA tourist or specific destination???
+    {/*ex. Downtown LA tourist or specific destination???*/}
       </div>
     );
   }
