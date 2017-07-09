@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import Navigation from './Navigation'
-import SampleForm from './SampleForm'
-import TourList from './TourList'
-import YouTubeSearch from './YouTubeSearch'
+import Header from './Header'
+import Main from './Main'
 
 
 
@@ -10,10 +8,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navigation />
-        <YouTubeSearch />
-        <TourList />
-        <SampleForm />
+        <Header />
+        <Main />
       </div>
     );
   }
