@@ -8,12 +8,27 @@ class TourDetails extends Component {
         this.state = {
             selectedDestination: null
         }
+        this.handleDestinationSelection = this.handleDestinationSelection.bind(this)
+        this.closeModal = this.closeModal.bind(this)
     }
+
+    handleDestinationSelection(destination) {
+        this.setState((prev, props) => {
+            return {selectedDestination: destination}
+        })
+    }
+
+    closeModal() {
+        this.setState((prev, props) => {
+            return {selectedDestination: null}
+        })
+    }
+
 
     render() {
 
         let tourDestinations = this.props.tour.destinations.map((tourDestination) => {
-            return <li key={tourDestination}>
+            return <li key={tourDestination} onClick={() => this.handleDestinationSelection(tourDestination)}>
                 {tourDestination}
             </li>
         })
@@ -24,7 +39,7 @@ class TourDetails extends Component {
             <div className="video-detail col-md-8">
                 <div className="embed-responsive embed-responsive-16by9">
                     <div  className="embed-responsive-item">
-                        <TourSite destination={destination}/>
+                        <TourSite destination={destination} closeModal={this.closeModal}/>
                         <h3>Explore {this.props.tour.name}!</h3>
                         <ul className="details">
                             {tourDestinations}

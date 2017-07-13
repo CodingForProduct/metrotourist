@@ -5,7 +5,7 @@ import { Modal, Button } from 'react-bootstrap'
 class TourSite extends Component {
   render() {
     return (
-        <Modal show={this.props.destination} onHide={this.close}>
+        <Modal show={this.props.destination} onHide={this.props.closeModal}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
@@ -13,7 +13,7 @@ class TourSite extends Component {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.close}>Close</Button>
+            <Button onClick={this.props.closeModal}>Close</Button>
           </Modal.Footer>
         </Modal>
     );
