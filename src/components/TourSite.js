@@ -5,9 +5,9 @@ import { Modal, Button } from 'react-bootstrap'
 class TourSite extends Component {
   render() {
     return (
-        <Modal show={this.props.destination} onHide={this.props.closeModal}>
+        <Modal show={!!this.props.destination} onHide={this.props.closeModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>{this.props.destination}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
