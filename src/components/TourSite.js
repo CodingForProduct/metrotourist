@@ -13,7 +13,7 @@ class TourSite extends Component {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.props.closeModal}>Close</Button>
+            <Button onClick={this.props.closeModal}>Let's go!</Button>
           </Modal.Footer>
         </Modal>
     );
