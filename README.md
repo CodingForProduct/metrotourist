@@ -42,3 +42,7 @@ Bonus Options: Alert choices (viable if phone app), map with active drop pins.
 
 # Presentation Slides
 View these [Presentation Slides](https://docs.google.com/presentation/d/1qKUBKcO52O5vSLpBMlUkBZBXZwpa41UCGXWIGrai3vY/edit?usp=sharing) to review the general user flow of the app.  
+
+# Run Mocha Tests
+To run the tests, CLI $ type npm run test
+
