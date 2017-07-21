@@ -1,31 +1,31 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
 
 class SampleForm extends Component {
     constructor(){
-        super()
+        super();
         this.state = {
             answer: null,
-        }
-        this.handleFormSubmit = this.handleFormSubmit.bind(this)
+        };
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
     handleFormSubmit(e) {
-        e.preventDefault()
+        e.preventDefault();
         this.getSum(e.target.inputOne.value, e.target.inputTwo.value)
         .then((sum) => {
             this.setState((prevState, props) => {
-                return { answer: sum }
-            })
-        })
+                return { answer: sum };
+            });
+        });
 
     }
     getSum(valueOne, valueTwo) {
-        const url = 'http://localhost:3001/add'
-        const data = {a: valueOne, b: valueTwo}
+        const url = 'http://localhost:3001/add';
+        const data = {a: valueOne, b: valueTwo};
         return axios.get(url, {params: data})
         .then((response) => {
-            return response.data.sum
-        })
+            return response.data.sum;
+        });
     }
     render() {
         return (

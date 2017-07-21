@@ -5,14 +5,8 @@ const path = require('path');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
-mongoose.Promise = global.Promise;
-
-//Require Schemas here for now.
-const Tour = require('./database/models/tour.js');
-const Site = require('./database/models/site.js');
 
 const app = express();
-const PORT = process.env.PORT || 3001; // Sets an initial port. used later in listener at bottom of page
 
 
 
@@ -29,7 +23,12 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 
 // ----- MongoDB Configuration configuration -----
+//Require Schemas here for now.
+// const Tour = require('./database/models/tour.js');
+// const Site = require('./database/models/site.js');
+
 // mongoose.connect('mongodb://localhost/metrotourist'); 
+mongoose.Promise = global.Promise;
 
 if (process.env.NODE_ENV !== 'test') {
   mongoose.connect('mongodb://localhost/metrotourist', { useMongoClient: true }); //above doesn't work
@@ -70,11 +69,10 @@ app.get('/add', function (req, res) {
     });
 });
 
-app.get('/api', (req, res) => {
-  res.send ({hi:"there"});
-});
+// initialize api routes
+app.use('/api', require('./routes/api_routes'));
 
-// separate routes forward planned. routes(app);
+// routes(app);
 // require('./routes/api-routes.js')(app); 
 // require('./routes/html-routes.js')(app);
 
@@ -83,8 +81,17 @@ app.use((err, req, res, next) => {
   res.status(422).send({error: err.message });
 });
 
-// start server on port
 
+// error handling middleware - old school can delete the following
+// app.use(function(err, req, res, next){
+//     console.log(err); // to see properties of message in our console
+//     res.status(422).send({error: err.message});
+// });
+
+
+// start server on port
+const PORT = process.env.PORT || 3001; // Sets an initial port. 
+// app.listen(PORT, function() etc)
 app.listen(3001, function () {
     console.log('Metrotourist app listening on port: ' + PORT)
 });

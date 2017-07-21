@@ -3,10 +3,17 @@ const Schema = mongoose.Schema;
 const SiteSchema = require('./site');
 
 const TourSchema = new Schema({
-	tourName: String,
+	tourName: {
+		type: String,
+		required: [true, "Tour name is required"],
+		unique: true
+	},
 	description: String,
 	image: String,
-	tourStation: String,
+	tourStation: {
+		type: String,
+		required: [true, "Tour Station is required"],
+	},
 	tourLines: Array,
 	userStartLocation: String,
 	sites: [SiteSchema]

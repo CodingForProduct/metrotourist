@@ -1,35 +1,35 @@
-import React, { Component } from 'react'
-import ImageCarousel from './ImageCarousel'
-import TourDetails from './TourDetails'
-import TourListItem from './TourListItem'
-import axios from 'axios'
+import React, { Component } from 'react';
+import ImageCarousel from './ImageCarousel';
+import TourDetails from './TourDetails';
+import TourListItem from './TourListItem';
+import axios from 'axios';
 
 class TourList extends Component {
     constructor(){
-        super()
+        super();
         this.state = {
             tourListings: null,
             selectedTour: null
-        }
+        };
         this.handleTourSelection = this.handleTourSelection.bind(this)
     }
     componentWillMount(){
-        const url = 'http://localhost:3001/tours'
+        const url = 'http://localhost:3001/tours';
         return axios.get(url, null)
         .then((response) => {
             return this.setState((prevState, props) => {
-                return {tourListings: response.data}
-            })
-        })
+                return {tourListings: response.data};
+            });
+        });
     }
     handleTourSelection(tour) {
         this.setState((prev, props) => {
-            return {selectedTour: tour}
-        })
+            return {selectedTour: tour};
+        });
     }
 
     render() {
-        let tourNames = []
+        let tourNames = [];
 
         if (this.state.tourListings) {
             tourNames = this.state.tourListings.map(
