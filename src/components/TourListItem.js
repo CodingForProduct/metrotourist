@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class TourListItem extends Component {
 
     render() {
-        const tourListing = this.props.tourListing
+        const tourListing = this.props.tourListing;
         return (
             <li onClick={() => this.props.handleClick(tourListing)} className="list-group-item">
                 <div className="video-list media">

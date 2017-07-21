@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
-import TourList from './TourList'
-import YouTubeSearch from './YouTubeSearch'
+import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import TourList from './TourList';
+import YouTubeSearch from './YouTubeSearch';
 
 
 
