@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 
 const app = express();
-
+const tests = require('./routes/tests')
 
 
 app.use(cors());
@@ -27,7 +27,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 // const Tour = require('./database/models/tour.js');
 // const Site = require('./database/models/site.js');
 
-// mongoose.connect('mongodb://localhost/metrotourist'); 
+// mongoose.connect('mongodb://localhost/metrotourist');
 mongoose.Promise = global.Promise;
 
 if (process.env.NODE_ENV !== 'test') {
@@ -43,37 +43,11 @@ db.once('open', function () {
   console.log('Mongoose connection successful.');
 });
 
-
-app.get('/', function (req, res) {
-    res.status(200).send('Hello World!');
-});
-
-//array of tours -- 
-const tourOptions = [
-  { id: 1, name: "Hollywood", destinations: ["HardRock", "Chinese Theater", "Walk of Stars"]},
-  { id: 2, name: "Downtown LA", destinations: ["Pershing Square", "Angel's Flight"]},
-  { id: 3, name: "Santa Monica", destinations: ["The Pier", "3rd Street Promenade"] },
-  { id: 4, name: "Culver City", destinations: ["Culver Hotel", "The Culver City Stairs", "Baldwin Hills Scenic Overlook"]},
-];
-
-// display list of tours
-app.get('/tours', function (request, response) {
-    response.status(200)
-  .send(tourOptions);
-});
-
-app.get('/add', function (req, res) {
-    res.status(200)
-    .send({
-        sum: parseInt(req.query.a) + parseInt(req.query.b)
-    });
-});
-
 // initialize api routes
 app.use('/api', require('./routes/api_routes'));
-
+app.use('/api/tests', tests);
 // routes(app);
-// require('./routes/api-routes.js')(app); 
+// require('./routes/api-routes.js')(app);
 // require('./routes/html-routes.js')(app);
 
 //AFTER routes! Error handler
@@ -90,7 +64,7 @@ app.use((err, req, res, next) => {
 
 
 // start server on port
-const PORT = process.env.PORT || 3001; // Sets an initial port. 
+const PORT = process.env.PORT || 3001; // Sets an initial port.
 // app.listen(PORT, function() etc)
 app.listen(3001, function () {
     console.log('Metrotourist app listening on port: ' + PORT)
