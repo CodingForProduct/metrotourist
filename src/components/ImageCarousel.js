@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Carousel } from 'react-bootstrap';
 
-const myStyle = {
 
-}
 
 class ImageCarousel extends Component {
     render() {
