@@ -16,9 +16,13 @@ const TourSchema = new Schema({
 	},
 	tourLines: Array,
 	userStartLocation: String,
-	sites: [SiteSchema]
+	sites: [{
+		type: Schema.Types.ObjectId,
+		ref: Site
+		}]
 });
 
+// alternative to type/ref  I think [SiteSchema]
 //Turn the schema into a model
 const Tour = mongoose.model('tour', TourSchema);
 

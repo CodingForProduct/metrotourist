@@ -12,6 +12,37 @@ router.get('/tourlist', function(req, res, next){
     });
 });
 
+router.get('/toursites', function(req, res, next){
+	Tour.find({tourName: "Hollywood Classic"}).populate('sites').
+	exec(function(err, Tour){
+		if(err) return handleError(err);
+		console.log('This is the list of sites for Hollywood Tour', sites.siteName)
+	});
+})
+// router.get('/sitelist', function(req, res, next){
+// 	sites.find({tourName:"Hollywood"})
+// 		.sort('siteNames')
+// 		.populate('siteNames')
+// 		.run(function(err, docs){
+// 			if(err)
+// 		})
+// })
+
+
+// router.get('/siteList', function(req, res, next){
+// 	// const query = Tour.find({req.body.tourName})
+// 	const query = Tour.find({Hollywood})
+
+// 		query.select('sites')
+// 		query.sort({siteName})
+// 		query.exec(function(err, sites){
+// 			if(err) 
+// 				return handle error (err);
+// });
+
+// or search the sites collection for all that have tourName reqbody
+
+
 // add a new tour to the db
 // router.post('/api/tours', function(req, res){
 //     res.send({
