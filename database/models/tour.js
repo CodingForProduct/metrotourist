@@ -15,11 +15,11 @@ const TourSchema = new Schema({
 		required: [true, "Tour Station is required"],
 	},
 	tourLines: Array,
-	userStartLocation: String,
-	sites: [{
-		type: Schema.Types.ObjectId,
-		ref: Site
-		}]
+	// userStartLocation: String,
+	// sites: [{
+	// 	type: Schema.Types.ObjectId,
+	// 	ref: Site
+	// 	}]
 });
 
 // alternative to type/ref  I think [SiteSchema]
