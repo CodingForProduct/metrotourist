@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const SiteSchema = require('./site');
+// const SiteSchema = require('./site');
 
 const TourSchema = new Schema({
 	tourName: {
@@ -15,9 +15,15 @@ const TourSchema = new Schema({
 		required: [true, "Tour Station is required"],
 	},
 	tourLines: Array,
-	userStartLocation: String,
-	sites: [SiteSchema]
+	// userStartLocation: String,
+	// sites: {
+	// 	type: Schema.Types.ObjectId,
+	// 	ref: "Site"
+	// }
 });
+
+
+
 
 //Turn the schema into a model
 const Tour = mongoose.model('tour', TourSchema);
