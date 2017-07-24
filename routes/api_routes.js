@@ -29,24 +29,44 @@ router.post('/tourlist', function(req, res, next){
 });
 
 
+//get a list of all tours from the db
+router.get('/sitelist', function(req, res, next){
+    // res.send({type: 'GET'});
+    Site.find({}).sort({siteName:1}).then(function(sites){
+     res.send(sites);
+    });
+});
+
+router.post('/sitelist', function(req, res, next){
+    // res.send({type: 'POST'});
+    Site.find({}).sort({siteName:1}).then(function(sites){
+        res.send(sites);
+    });
+});
+
+router.post('/sitelistall', (req, res, next) => {
+    return Site.find({}).sort({siteName:1});
+});
 
 // find list of sites that belong to specific tourTitle using Site schema
 // replace hard code with : const query = Site.find({tourTitle: req.params.tourTitle});
 
-router.get('/sitelist', (req, res) => {
-  const query = Site.find({tourTitle: "Hollywood Classic"})
-  .limit(10)
-  .sort({siteName});
-  return query;
-});
 
-router.post('/sitelist', (req, res, next) => {
-    return Site.find({tourTitle:"Hollywood Classic"}).sort({siteName});
-});
+//troubleshot ES6 version later
+// router.get('/sitelist', (req, res) => {
+//   const query = Site.find({tourTitle: "Hollywood Classic"})
+//   .limit(10)
+//   .sort({siteName});
+//   return query;
+// });
 
-router.post('/sitelistall', (req, res, next) => {
-    return Site.find({}).sort({siteName});
-});
+// router.post('/sitelist', (req, res, next) => {
+//     return Site.find({tourTitle:"Hollywood Classic"}).sort({siteName});
+// });
+
+// router.post('/sitelistall', (req, res, next) => {
+//     return Site.find({}).sort({siteName});
+// });
 
 // router.post('/sitelist', function(req, res, next){
 //     Site.find({}).then(function(sites){
