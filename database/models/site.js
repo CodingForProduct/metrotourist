@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const SiteSchema = require('./tour');
+// const SiteSchema = require('./tour');
 
 
 const SiteSchema = new Schema ({
@@ -18,6 +18,7 @@ const SiteSchema = new Schema ({
 	address: String,
 	phone: String
 });
+
 
 const Site = mongoose.model('site', SiteSchema);
 

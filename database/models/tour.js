@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const SiteSchema = require('./site');
+// const SiteSchema = require('./site');
 
 const TourSchema = new Schema({
 	tourName: {
