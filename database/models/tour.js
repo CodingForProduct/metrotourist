@@ -9,12 +9,11 @@ const TourSchema = new Schema({
 		unique: true
 	},
 	description: String,
-	image: String,
 	tourStation: {
 		type: String,
 		required: [true, "Tour Station is required"],
 	},
-	tourLines: Array,
+	tourLines: String,
 	// userStartLocation: String,
 	// sites: {
 	// 	type: Schema.Types.ObjectId,

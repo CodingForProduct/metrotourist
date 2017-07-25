@@ -10,7 +10,6 @@ const SiteSchema = new Schema ({
   	// ref: 'Tour',
   	required: [true, "You must include which tour this site belongs to"]
   	},
-	image: String,
 	longDescription: String,
 	website: String,
 	address: String,
