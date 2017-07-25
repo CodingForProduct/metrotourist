@@ -24,8 +24,11 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 // ----- MongoDB Configuration configuration -----
 //Require Schemas here for now.
-const Tour = require('./database/models/tour.js');
-const Site = require('./database/models/site.js');
+// const Tour = require('./database/models/tour.js');
+// const Site = require('./database/models/site.js');
+// const Dummy = require('./database/models/dummy.js');
+
+
 
 // mongoose.connect('mongodb://localhost/metrotourist'); 
 mongoose.Promise = global.Promise;

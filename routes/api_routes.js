@@ -2,6 +2,8 @@ const express = require ('express');
 const router = express.Router();
 const Tour = require('../database/models/tour');
 const Site = require('../database/models/site');
+const Dummy = require('../database/models/dummy');
+
 
 // find one tour only
 // router.get('/findtour', (req, res, next) => {
