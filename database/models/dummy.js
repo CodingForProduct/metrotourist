@@ -2,36 +2,28 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 // const SiteSchema = require('./site');
 
-const TourSchema = new Schema({
-	tourName: {
+const DummySchema = new Schema({
+	dummyName: {
 		type: String,
-		required: [true, "Tour name is required"],
+		required: [true, "Dummy name is required"],
 		unique: true
 	},
 	description: String,
 	image: String,
-	tourStation: {
+	dummyStation: {
 		type: String,
-		required: [true, "Tour Station is required"],
+		required: [true, "Dummy Station is required"],
 	},
-	tourLines: Array
-});
-
-//Turn the schema into a model
-const Tour = mongoose.model('tour', TourSchema);
-
-module.exports = Tour;
-
+	dummyLines: Array,
 	// userStartLocation: String,
-
 	// sites: [{
 	// 	type: Schema.Types.ObjectId,
 	// 	ref: Site
 	// 	}]
+});
 
 // alternative to type/ref  I think [SiteSchema]
+//Turn the schema into a model
+const Dummy = mongoose.model('dummy', DummySchema);
 
-	// sites: {
-	// 	type: Schema.Types.ObjectId,
-	// 	ref: "Site"
-	// }
+module.exports = Dummy;
