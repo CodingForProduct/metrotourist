@@ -5,21 +5,12 @@ const Site = require('../database/models/site');
 const Dummy = require('../database/models/dummy');
 
 
-// find one tour only
-// router.get('/findtour', (req, res, next) => {
-//     return Tour.findOne({_id: _id});
-// });
 
-//alternatively for find all tours using ES6
-// router.get('/tourlist', (req, res, next) => {
-//     return Tour.find({}).sort({tourName :1});
-// });
-
-//get a list of all tours from the db
+// get a list of all tours from the db
 router.get('/tourlist', function(req, res, next){
     // res.send({type: 'GET'});
-    Tour.find({}).sort({tourName:1}).then(function(tours){
-     res.send(tours);
+    Tour.find({}).then(function(tours){
+    	res.send(tours);
     });
 });
 
@@ -29,7 +20,7 @@ router.get('/toursites', function(req, res, next){
 		if(err) return handleError(err);
 		console.log('This is the list of sites for Hollywood Tour', sites.siteName)
 	});
-})
+});
 // router.get('/sitelist', function(req, res, next){
 // 	sites.find({tourName:"Hollywood"})
 // 		.sort('siteNames')
@@ -105,22 +96,6 @@ router.post('/sitelistall', (req, res, next) => {
 //     Site.find({}).then(function(sites){
 //         res.send(sites);
 
-//     });
-// });
- // find all sites -- for testing - can be deleted.
-
-// versus above??
-// router.post('/sitelist', function(req, res, next){
-//     const query = Site.find({});
-//     query.sort({siteName: 'siteName'})
-//          .limit(10)
-//          .exec(function(err,results){
-//             res.render('/sitelist', {siteName: "Sites Available", sites:results});
-//          });
-// });
-
-
-
 // instead can use the create method that creates new tour and saves to the db
 router.post('/tourlist', function(req, res, next){
     Tour.create(req.body).then(function(tour){
@@ -143,55 +118,19 @@ router.delete('/tourlist/:id', function(req, res, next){
     }).catch(next);
 });
 
-// for testing only
-// app.get('/api', (req, res) => {
-//   res.send ({hi:"there"});
+module.exports = router;
+
+// app.get('/api/findtour', (req, res) => {
+//     return Tour.findOne({_id: _id});
 // });
 
-//back up to be deleted
-// --------------------------------------------------
-
-//alternatively for find all tours using ES6 - not functioning
-// router.get('/tourlist', (req, res, next) => {
-//     return Tour.find({}).sort({tourName :1});
-// });
-
-//alternatively for send all tours using ES6 - not functioning
-// router.post('/tourlist', (req, res, next) => {
-//     return Tour.find({}).sort({tourName :1});
-// });
-
-
-// router.get('/sitelist', function(req, res, next){
-//     // res.send({type: 'GET'});
-//     Site.find({}).then(function(sites){
-//         res.send(sites);
-//     });
-// });
-
-// app.get('/findsites', (req, res) => {
+// app.get('/api/findsites', (req, res) => {
 //   const query = Tour.find({tourName: "Hollywood"})
 //   .find('sites')
 //   .limit(10)
 //   .sort({siteName});
 //   return query;
 // });
-
-// get a list of all tours from the db
-// router.get('/tourlist', function(req, res, next){
-//     // res.send({type: 'GET'});
-//     Tour.find({}).then(function(tours){
-//      res.send(tours);
-//     });
-// });
-
-// router.post('/tourlist', function(req, res, next){
-//     // res.send({type: 'POST'});
-//     Tour.find({}).then(function(tours){
-//         res.send(tours);
-//     });
-// });
-
 // add a new tour to the db
 // router.post('/api/tours', function(req, res){
 //     res.send({
@@ -202,11 +141,7 @@ router.delete('/tourlist/:id', function(req, res, next){
 //         tourStation: req.body.tourStation,
 //         tourLines: req.body.tourLines,
 //         userStartLocation: req.body.userStartLocation
-//     });
-
-// });
 
 
-module.exports = router;
 
 

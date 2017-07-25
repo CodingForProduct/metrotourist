@@ -21,17 +21,3 @@ const TourSchema = new Schema({
 const Tour = mongoose.model('tour', TourSchema);
 
 module.exports = Tour;
-
-	// userStartLocation: String,
-
-	// sites: [{
-	// 	type: Schema.Types.ObjectId,
-	// 	ref: Site
-	// 	}]
-
-// alternative to type/ref  I think [SiteSchema]
-
-	// sites: {
-	// 	type: Schema.Types.ObjectId,
-	// 	ref: "Site"
-	// }
