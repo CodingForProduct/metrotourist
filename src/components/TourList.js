@@ -4,6 +4,17 @@ import TourDetails from './TourDetails';
 import TourListItem from './TourListItem';
 import axios from 'axios';
 
+// let imgURL = "images/HollywoodBackground.jpg"
+// let styles = {
+//             backgroundImage: 'url(' + imgURL + ')',
+//             backgroundSize: 'cover',
+//             overflow: 'hidden',
+//         }
+//
+// let divStyles = {
+//     height: "1000px"
+// }
+
 class TourList extends Component {
     constructor(){
         super();

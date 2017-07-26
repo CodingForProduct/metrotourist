@@ -13,16 +13,8 @@ const TourSchema = new Schema({
 		type: String,
 		required: [true, "Tour Station is required"],
 	},
-	tourLines: String,
-	// userStartLocation: String,
-	// sites: {
-	// 	type: Schema.Types.ObjectId,
-	// 	ref: "Site"
-	// }
+	tourLines: String
 });
-
-
-
 
 //Turn the schema into a model
 const Tour = mongoose.model('tour', TourSchema);

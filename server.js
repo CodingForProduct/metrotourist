@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 
 const app = express();
-
+const tests = require('./routes/tests')
 
 
 app.use(cors());
@@ -28,9 +28,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 // const Site = require('./database/models/site.js');
 // const Dummy = require('./database/models/dummy.js');
 
-
-
-// mongoose.connect('mongodb://localhost/metrotourist'); 
+// mongoose.connect('mongodb://localhost/metrotourist');
 mongoose.Promise = global.Promise;
 
 if (process.env.NODE_ENV !== 'test') {
@@ -74,9 +72,9 @@ app.get('/add', function (req, res) {
 
 // initialize api routes
 app.use('/api', require('./routes/api_routes'));
-
+app.use('/api/tests', tests);
 // routes(app);
-// require('./routes/api-routes.js')(app); 
+// require('./routes/api-routes.js')(app);
 // require('./routes/html-routes.js')(app);
 
 //AFTER routes! Error handler
@@ -93,7 +91,7 @@ app.use((err, req, res, next) => {
 
 
 // start server on port
-const PORT = process.env.PORT || 3001; // Sets an initial port. 
+const PORT = process.env.PORT || 3001; // Sets an initial port.
 // app.listen(PORT, function() etc)
 app.listen(3001, function () {
     console.log('Metrotourist app listening on port: ' + PORT)
