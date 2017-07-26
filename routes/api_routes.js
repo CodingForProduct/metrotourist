@@ -2,13 +2,14 @@ const express = require ('express');
 const router = express.Router();
 const Tour = require('../database/models/tour');
 const Site = require('../database/models/site');
-const Dummy = require('../database/models/dummy');
 
 
 // find one tour only
-// router.get('/findtour', (req, res, next) => {
-//     return Tour.findOne({_id: _id});
-// });
+router.get('/findtour', (req, res, next) => {
+    // return Tour.findOne({_id: _id});
+    return Tour.findOne({tourName:"Hollywood"});
+
+});
 
 //alternatively for find all tours using ES6
 // router.get('/tourlist', (req, res, next) => {
@@ -22,6 +23,13 @@ router.get('/tourlist', function(req, res, next){
      res.send(tours);
     });
 });
+
+// router.get('/tourlist', function(req, res, next){
+//     // res.send({type: 'GET'});
+//     Tour.find({}).then(function(tours){
+//      res.send(tours);
+//     });
+// });
 
 router.post('/tourlist', function(req, res, next){
     // res.send({type: 'POST'});
