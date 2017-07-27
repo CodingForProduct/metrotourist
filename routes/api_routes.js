@@ -13,7 +13,7 @@ router.get('/tourlist', function(req, res, next){
 });
 
 // get a list of all sites from the site collection
-router.get('/sitelist', function(req, res, next){
+router.get('/sitelistall', function(req, res, next){
     Site.find({}).sort({siteName:1}).then(function(sites){
         res.send(sites);
     });
