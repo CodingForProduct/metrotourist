@@ -23,12 +23,14 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 
 // ----- MongoDB Configuration configuration -----
-//Require Schemas here for now.
-// const Tour = require('./database/models/tour.js');
-// const Site = require('./database/models/site.js');
-// const Dummy = require('./database/models/dummy.js');
 
-// mongoose.connect('mongodb://localhost/metrotourist');
+// for Heroku deployment mlab provides a mongodb instance
+// To connect using the mongo shell:
+// mongo ds127063.mlab.com:27063/metrotourist -u <admin> -p <password4KatKy>
+// To connect using a driver via the standard MongoDB URI (what's this?):
+
+// mongodb://<admin>:<password4KatKy>@ds127063.mlab.com:27063/metrotourist
+
 mongoose.Promise = global.Promise;
 
 if (process.env.NODE_ENV !== 'test') {
@@ -44,6 +46,7 @@ db.once('open', function () {
   console.log('Mongoose connection successful.');
 });
 
+// Routes
 
 app.get('/', function (req, res) {
     res.status(200).send('Hello World!');
