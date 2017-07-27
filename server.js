@@ -96,7 +96,7 @@ app.use((err, req, res, next) => {
 // start server on port
 const PORT = process.env.PORT || 3001; // Sets an initial port.
 // app.listen(PORT, function() etc)
-app.listen(3001, function () {
+app.listen(PORT, function () {
     console.log('Metrotourist app listening on port: ' + PORT)
 });
 
