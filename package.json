@@ -28,5 +28,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:CodingForProduct/metrotourist.git",
+    "type": "git"
+  },
+  "author": "Kylie <kyliecalif@gmail.com>",
+  "license": "MIT"
 }
