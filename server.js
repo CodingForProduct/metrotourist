@@ -52,7 +52,7 @@ app.get('/', function (req, res) {
     res.status(200).send('Hello World!');
 });
 
-//array of tours -- 
+//array of tours --
 const tourOptions = [
   { id: 1, name: "Hollywood", destinations: ["HardRock", "Chinese Theater", "Walk of Stars"]},
   { id: 2, name: "Downtown LA", destinations: ["Pershing Square", "Angel's Flight"]},
