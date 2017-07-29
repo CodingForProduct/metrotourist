@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 
 const app = express();
-const tests = require('./routes/tests')
+const tests = require('./routes/tests');
 
 
 app.use(cors());
@@ -19,7 +19,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-// app.use(express.static('./public'));
+// get reference to the client build directory CRAE
+// const staticFiles = express.static(path.join(__dirname, '../../client/build'))
+// app.use(staticFiles)  CRAE
+// pass the static files (react app) to the express app.
+
+
+app.use(express.static('./public'));
+app.use('/static', express.static(path.join(__dirname, 'public')));
+
 
 
 // ----- MongoDB Configuration configuration -----
@@ -27,15 +35,12 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 // for Heroku deployment mlab provides a mongodb instance
 // To connect using the mongo shell:
 // mongo ds127063.mlab.com:27063/metrotourist -u <admin> -p <password4KatKy>
-// To connect using a driver via the standard MongoDB URI (what's this?):
-
 // mongodb://<admin>:<password4KatKy>@ds127063.mlab.com:27063/metrotourist
 
 mongoose.Promise = global.Promise;
 
 if (process.env.NODE_ENV !== 'test') {
-  mongoose.connect('mongodb://localhost/metrotourist', { useMongoClient: true }); //above doesn't work
-}
+  mongoose.connect('mongodb://localhost/metrotourist', { useMongoClient: true });
 var db = mongoose.connection;
 
 db.on('error', function (err) {
@@ -52,7 +57,7 @@ app.get('/', function (req, res) {
     res.status(200).send('Hello World!');
 });
 
-//array of tours -- 
+//array of tours --
 const tourOptions = [
   { id: 1, name: "Hollywood", destinations: ["HardRock", "Chinese Theater", "Walk of Stars"]},
   { id: 2, name: "Downtown LA", destinations: ["Pershing Square", "Angel's Flight"]},
@@ -76,13 +81,12 @@ app.get('/add', function (req, res) {
 // initialize api routes
 app.use('/api', require('./routes/api_routes'));
 app.use('/api/tests', tests);
-// routes(app);
-// require('./routes/api-routes.js')(app);
-// require('./routes/html-routes.js')(app);
+app.use('/*', staticFiles); //for deployment maybe
+
 
 //AFTER routes! Error handler
 app.use((err, req, res, next) => {
-  res.status(422).send({error: err.message });
+  res.status(422).send({error: err.message })
 });
 
 
