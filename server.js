@@ -6,6 +6,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const dbConnect = process.env.REACT_APP_SECRETDB;
 const mongoLab = process.env.REACT_APP_MONGOLAB_URI;
+const dotenv = require('dotenv');
 
 
 const app = express();
