@@ -34,12 +34,12 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 
 
 // ----- MongoDB Configuration configuration -----
-
-
 mongoose.Promise = global.Promise;
+const URI = process.env.REACT_APP_MONGOLAB_URI || 'mongodb://localhost/metrotourist';
+
 
 if (process.env.NODE_ENV !== 'test') {
-  mongoose.connect('mongodb://localhost/metrotourist', { useMongoClient: true });
+  mongoose.connect(URI, { useMongoClient: true });
     var db = mongoose.connection;
 
     db.on('error', function (err) {
@@ -49,7 +49,7 @@ if (process.env.NODE_ENV !== 'test') {
     db.once('open', function () {
       console.log('Mongoose connection successful.');
     });
-};
+}; 
 // --------Routes-------------
 
 //Hello World route '/' to be removed
