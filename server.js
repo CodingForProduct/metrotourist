@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const dbConnect = process.env.REACT_APP_SECRETDB;
 
 
 const app = express();
@@ -19,40 +20,39 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
+// --------Static files --------------
 // get reference to the client build directory CRAE
 // const staticFiles = express.static(path.join(__dirname, '../../client/build'))
 // app.use(staticFiles)  CRAE
 // pass the static files (react app) to the express app.
 
-
-app.use(express.static('./public'));
-app.use('/static', express.static(path.join(__dirname, 'public')));
+// const staticFiles = express.static(path.join(__dirname, 'public'));
+// app.use('/*', staticFiles); //for deployment maybe
+app.use('/static', express.static(path.join(__dirname, 'public')))
+// app.use(express.static('./public'));
 
 
 
 // ----- MongoDB Configuration configuration -----
 
-// for Heroku deployment mlab provides a mongodb instance
-// To connect using the mongo shell:
-// mongo ds127063.mlab.com:27063/metrotourist -u <admin> -p <password4KatKy>
-// mongodb://<admin>:<password4KatKy>@ds127063.mlab.com:27063/metrotourist
 
 mongoose.Promise = global.Promise;
 
 if (process.env.NODE_ENV !== 'test') {
   mongoose.connect('mongodb://localhost/metrotourist', { useMongoClient: true });
-var db = mongoose.connection;
+    var db = mongoose.connection;
 
-db.on('error', function (err) {
-  console.log('Mongoose Error: ', err);
-});
+    db.on('error', function (err) {
+      console.log('Mongoose Error: ', err);
+    });
 
-db.once('open', function () {
-  console.log('Mongoose connection successful.');
-});
+    db.once('open', function () {
+      console.log('Mongoose connection successful.');
+    });
+};
+// --------Routes-------------
 
-// Routes
-
+//Hello World route '/' to be removed
 app.get('/', function (req, res) {
     res.status(200).send('Hello World!');
 });
@@ -71,33 +71,16 @@ app.get('/tours', function (request, response) {
   .send(tourOptions);
 });
 
-app.get('/add', function (req, res) {
-    res.status(200)
-    .send({
-        sum: parseInt(req.query.a) + parseInt(req.query.b)
-    });
-});
-
-// initialize api routes
+// ---------initialize api routes---------
 app.use('/api', require('./routes/api_routes'));
 app.use('/api/tests', tests);
-app.use('/*', staticFiles); //for deployment maybe
 
 
 //AFTER routes! Error handler
 app.use((err, req, res, next) => {
-  res.status(422).send({error: err.message })
+  res.status(422).send({error: err.message });
 });
 
-
-// error handling middleware - old school can delete the following
-// app.use(function(err, req, res, next){
-//     console.log(err); // to see properties of message in our console
-//     res.status(422).send({error: err.message});
-// });
-
-
-// start server on port
 const PORT = process.env.PORT || 3001; // Sets an initial port.
 // app.listen(PORT, function() etc)
 app.listen(PORT, function () {
