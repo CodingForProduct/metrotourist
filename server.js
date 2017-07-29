@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-// app.use(express.static('./public'));
+app.use(express.static('./public'));
 
 
 // ----- MongoDB Configuration configuration -----
@@ -49,10 +49,10 @@ db.once('open', function () {
 // Routes
 
 app.get('/', function (req, res) {
-    res.status(200).send('Hello World!');
+  res.sendFile('index.html');
 });
 
-//array of tours -- 
+//array of tours --
 const tourOptions = [
   { id: 1, name: "Hollywood", destinations: ["HardRock", "Chinese Theater", "Walk of Stars"]},
   { id: 2, name: "Downtown LA", destinations: ["Pershing Square", "Angel's Flight"]},

@@ -25,9 +25,10 @@ class TourList extends Component {
         this.handleTourSelection = this.handleTourSelection.bind(this)
     }
     componentWillMount(){
-        const url = 'http://localhost:3001/tours';
+        const url = process.env.API_URL + 'tours';
         return axios.get(url, null)
         .then((response) => {
+          debugger
             return this.setState((prevState, props) => {
                 return {tourListings: response.data};
             });
