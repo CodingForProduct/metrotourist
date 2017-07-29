@@ -5,6 +5,7 @@ const path = require('path');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const dbConnect = process.env.REACT_APP_SECRETDB;
+const mongoLab = process.env.REACT_APP_MONGOLAB_URI;
 
 
 const app = express();
@@ -35,21 +36,20 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 
 // ----- MongoDB Configuration configuration -----
 mongoose.Promise = global.Promise;
-const URI = process.env.REACT_APP_MONGOLAB_URI || 'mongodb://localhost/metrotourist';
+const URI = mongoLab;
 
+//||'mongodb://localhost/metrotourist'; //, ({useMongoClient:true})
 
-if (process.env.NODE_ENV !== 'test') {
-  mongoose.connect(URI, { useMongoClient: true });
-    var db = mongoose.connection;
+// mongoose.connect('mongodb://localhost/advisorDemoTestDB', { useMongoClient: true })
+//stackoverflow: mongoose.MongoClient.connect  Cannot read property 'connect' of undefined
+mongoose.connect(URI, function(err,res){
+  if (err){
+    console.log("Error connecting to " + URI + "  "+ err);
+  }else{
+    console.log("Succeeded conneted to " + URI);
+  }
+});
 
-    db.on('error', function (err) {
-      console.log('Mongoose Error: ', err);
-    });
-
-    db.once('open', function () {
-      console.log('Mongoose connection successful.');
-    });
-}; 
 // --------Routes-------------
 
 //Hello World route '/' to be removed
