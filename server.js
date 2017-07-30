@@ -44,7 +44,7 @@ mongoose.connect(URI, function(err,res){
   if (err){
     console.log("Error connecting to " + URI + "  "+ err);
   }else{
-    console.log("Succeeded conneted to " + URI);
+    console.log("Succeeded connected to " + URI);
   }
 });
 
