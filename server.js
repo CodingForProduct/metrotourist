@@ -30,7 +30,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 // const staticFiles = express.static(path.join(__dirname, 'public'));
 // app.use('/*', staticFiles); //for deployment maybe
 app.use('/static', express.static(path.join(__dirname, 'public')))
-// app.use(express.static('./public'));
+//+app.use(express.static('./public'));
 
 
 
@@ -52,8 +52,9 @@ mongoose.connect(URI, function(err,res){
 
 //Hello World route '/' to be removed
 app.get('/', function (req, res) {
-    res.status(200).send('Hello World!');
+    res.sendFile('index.html');
 });
+
 
 //array of tours --
 const tourOptions = [
