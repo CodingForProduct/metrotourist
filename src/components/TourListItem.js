@@ -14,7 +14,7 @@ class TourListItem extends Component {
                         <div className="media-heading">Name: {tourListing.tourName}</div>
                         <div className="media-heading">Description: {tourListing.description}</div>
                         <div className="media-heading">Station: {tourListing.tourStation}</div>
-                        <div className="media-heading">Metro Line: {tourListing.tourLines[0]}</div>
+                        <div className="media-heading">Metro Line: {tourListing.tourLines}</div>
                     </div>
                 </div>
             </li>

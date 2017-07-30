@@ -34,7 +34,9 @@ class TourList extends Component {
         });
     }
     handleTourSelection(tour) {
+
         this.setState((prev, props) => {
+            //console.log(tour)
             return {selectedTour: tour};
         });
     }
