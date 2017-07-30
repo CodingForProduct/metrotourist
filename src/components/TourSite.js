@@ -14,7 +14,7 @@ class TourSite extends Component {
                     <Modal.Body>
                         <div><b>About:</b> {this.props.destination.longDescription}</div>
                         <div><b>Address:</b> {this.props.destination.address}</div>
-                        <div><a target="_blank" href={this.props.destination.website}>{this.props.destination.website}</a></div>
+                        <div><a target="_blank" href={`http://${this.props.destination.website}`}>{this.props.destination.website}</a></div>
 
                     </Modal.Body>
                     <Modal.Footer>

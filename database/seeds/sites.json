@@ -18,7 +18,7 @@
       "siteName": "El Capitan Theater",
       "tourTitle": "Hollywood",
       "longDescription": "Step into Hollywood's glittering past and be treated to an unparalleled movie-going experience powered by the most advanced cinema innovations. The legendary El Capitan Theater made it's debut on May 3, 1926 as Hollywood's first home of spoken drama. Fully restored to its original elegance. ",
-      "website": "https://elcapitantheatre.com/",
+      "website": "elcapitantheatre.com/",
       "address": "6838 Hollywood Boulevard, Los Angeles, CA 90028",
       "phone": "1-800-DISNEY6"
    },
@@ -26,7 +26,7 @@
       "siteName": "Hard Rock Cafe",
       "tourTitle": "Hollywood",
       "longDescription": "Located at the Hollywood and Highland Center, beside the world-famous Dolby Theatre and just steps away from the TCL Chinese Theatre and Walk of Fame, the Hard Rock Cafe offers high energy entertainment and a world-class menu. The 20,000-square-foot cafe includes a live music area, bar, and two retail stores offering Hard Rock Cafe limited merchandise.",
-      "website": "http://www.hardrock.com/cafes/hollywood-on-hollywood-blvd",
+      "website": "www.hardrock.com/cafes/hollywood-on-hollywood-blvd",
       "address": "6801 Hollywood Blvd, Hollywood, CA 90028",
       "phone": "(323) 464-7625"
    },
@@ -34,7 +34,7 @@
       "siteName": "Kenneth Hahn State Recreation Area",
       "tourTitle": "Culver City",
       "longDescription": "Kenneth Hahn State Recreation Area is an urban oasis and one of the largest inner-city parks and regional open spaces in greater Los Angeles. This lush and peaceful 338-acre recreational retreat offers hikers challenging trails that provide some of the best and most breathtaking views unlike any other in the city!",
-      "website": "http://parks.lacounty.gov/wps/portal/dpr/Parks/Kenneth_Hahn_State_Recreation_Area",
+      "website": "parks.lacounty.gov/wps/portal/dpr/Parks/Kenneth_Hahn_State_Recreation_Area",
       "address": "4100 South La Cienega Boulevard, Los Angeles, CA 90056",
       "phone": "(323) 298-3660"
    },
@@ -58,7 +58,7 @@
       "siteName": "Olvera Street",
       "tourTitle": "Downtown LA",
       "longDescription": "Olvera Street, known as the birthplace of Los Angeles, is a Mexican Marketplace that recreates a romantice 'Old Los Angeles' with a block long narrow tree-shaded brick-lined market with old structures, painted stalls, street vendors, cafes, restaurants and gift shops. Olvera Street was created in 1930.",
-      "website": "http://www.olvera-street.com",
+      "website": "www.olvera-street.com",
       "address": "845 Alameda Street, Los Angeles, CA 90012",
       "phone": "(323) 464-7625"
    },
@@ -93,7 +93,7 @@
       "siteName": "TCL Chinese Theatre",
       "tourTitle": "Hollywood",
       "longDescription": "The TCL Chinese Theatre, formerly Grauman's Chinese Theatre had its grand opening on May 18, 1927. To visit Los Angeles and not see the TCL Chinese Theatre is like visiting China and not seeing the Great Wall.",
-      "website": "http://tclchinesetheatres.com",
+      "website": "tclchinesetheatres.com",
       "address": "6925 Hollywood Blvd, Hollywood, CA 90028",
       "phone": "(323) 461-3331"
    }
