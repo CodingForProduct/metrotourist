@@ -1,0 +1,32 @@
+[
+   {
+      "tourName": "Culver City",
+      "description": "This Westside city is best known for film and TV production, including MGM studios, which is now part of Sony Pictures.",
+      "tourStation": "Culver City",
+      "tourLines": "Expo"
+   },
+   {
+      "tourName": "Downtown L.A.",
+      "description": "Los Angeles is the entertainment capital of the world, a cultural mecca boasting more than 100 museums, and a paradise of idyllic weather. Take a walk in Downtown L.A. - see the historic Broadway Theater, Bradbury Building, Grand Central Market, Arts District, Little Tokyo and more. ",
+      "tourStation": "Union Station",
+      "tourLines": "Gold"
+   },
+   {
+      "tourName": "Hollywood",
+      "description": "Hollywood, aka Tinseltown, is a neighborhood in Los Angeles, for some it's more a state-of-mind. I’m going to Hollywood! say young hopefuls who dream of acting in movies or on television.",
+      "tourStation": "Hollywood and Highland",
+      "tourLines": "Red"
+   },
+   {
+      "tourName": "Pasadena",
+      "description": "Pasadena famous as the host city for the Tournament of Roses Parade, is a true foodie's paradise, with over 500 restaurants. Don't miss the theaters and Descanso Gardens.",
+      "tourStation": "Lake Gold Line Station",
+      "tourLines": "Gold"
+   },
+   {
+      "tourName": "Santa Monica",
+      "description": "Santa Monica is home to 3.5 miles of clean white sand & ocean and the famous Santa Monica Pier. Ready to go shopping? There are multiple shopping neighborhoods. Whether you prefer name brands or global couture, you’ll find it here.",
+      "tourStation": "Downtown Santa Monica",
+      "tourLines": "Expo"
+   }
+]
