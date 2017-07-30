@@ -4,10 +4,12 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const mongoLab = process.env.REACT_APP_MONGOLAB_URI;
+// const dotenv = require('dotenv');
 
 
 const app = express();
-const tests = require('./routes/tests')
+const tests = require('./routes/tests');
 
 
 app.use(cors());
@@ -19,40 +21,42 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-// app.use(express.static('./public'));
+// --------Static files --------------
+// get reference to the client build directory CRAE
+// const staticFiles = express.static(path.join(__dirname, '../../client/build'))
+// app.use(staticFiles)  CRAE
+// pass the static files (react app) to the express app.
+
+// const staticFiles = express.static(path.join(__dirname, 'public'));
+// app.use('/*', staticFiles); //for deployment maybe
+app.use('/static', express.static(path.join(__dirname, 'public')))
+//+app.use(express.static('./public'));
+
 
 
 // ----- MongoDB Configuration configuration -----
-
-// for Heroku deployment mlab provides a mongodb instance
-// To connect using the mongo shell:
-// mongo ds127063.mlab.com:27063/metrotourist -u <admin> -p <password4KatKy>
-// To connect using a driver via the standard MongoDB URI (what's this?):
-
-// mongodb://<admin>:<password4KatKy>@ds127063.mlab.com:27063/metrotourist
-
 mongoose.Promise = global.Promise;
+const URI = mongoLab ||'mongodb://localhost/metrotourist'; //, ({useMongoClient:true})
 
-if (process.env.NODE_ENV !== 'test') {
-  mongoose.connect('mongodb://localhost/metrotourist', { useMongoClient: true }); //above doesn't work
-}
-var db = mongoose.connection;
-
-db.on('error', function (err) {
-  console.log('Mongoose Error: ', err);
+// mongoose.connect('mongodb://localhost/advisorDemoTestDB', { useMongoClient: true })
+//stackoverflow: mongoose.MongoClient.connect  Cannot read property 'connect' of undefined
+mongoose.connect(URI, function(err,res){
+  if (err){
+    console.log("Error connecting to " + URI + "  "+ err);
+  }else{
+    console.log("Succeeded conneted to " + URI);
+  }
 });
 
-db.once('open', function () {
-  console.log('Mongoose connection successful.');
-});
+// --------Routes-------------
 
-// Routes
-
+//Hello World route '/' to be removed
 app.get('/', function (req, res) {
-    res.status(200).send('Hello World!');
+    res.sendFile('index.html');
 });
 
-//array of tours -- 
+
+//array of tours --
 const tourOptions = [
   { id: 1, name: "Hollywood", destinations: ["HardRock", "Chinese Theater", "Walk of Stars"]},
   { id: 2, name: "Downtown LA", destinations: ["Pershing Square", "Angel's Flight"]},
@@ -66,34 +70,16 @@ app.get('/tours', function (request, response) {
   .send(tourOptions);
 });
 
-app.get('/add', function (req, res) {
-    res.status(200)
-    .send({
-        sum: parseInt(req.query.a) + parseInt(req.query.b)
-    });
-});
-
-// initialize api routes
+// ---------initialize api routes---------
 app.use('/api', require('./routes/api_routes'));
 app.use('/api/tests', tests);
-// routes(app);
-// require('./routes/api-routes.js')(app);
-// require('./routes/html-routes.js')(app);
+
 
 //AFTER routes! Error handler
 app.use((err, req, res, next) => {
   res.status(422).send({error: err.message });
 });
 
-
-// error handling middleware - old school can delete the following
-// app.use(function(err, req, res, next){
-//     console.log(err); // to see properties of message in our console
-//     res.status(422).send({error: err.message});
-// });
-
-
-// start server on port
 const PORT = process.env.PORT || 3001; // Sets an initial port.
 // app.listen(PORT, function() etc)
 app.listen(PORT, function () {

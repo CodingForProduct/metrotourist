@@ -8,7 +8,8 @@ const Site = require('../database/models/site');
 router.get('/tourlist', function(req, res, next){
     // res.send({type: 'GET'});
     Tour.find({}).sort({tourName:1}).then(function(tours){
-    	res.send(tours);
+    	res.status(200)
+      .send(tours);
     });
 });
 
@@ -26,7 +27,10 @@ router.get('/sitelist/tourtitle', function(req, res, next){
     });
 });
 
-
+// app.get('/tours', function (request, response) {
+//     response.status(200)
+//   .send(tourOptions);
+// });
 
 // create method that creates new tour and saves to the tour collection
 router.post('/tourlist/create', function(req, res, next){
@@ -51,4 +55,3 @@ router.delete('/tourlist/:id', function(req, res, next){
 });
 
 module.exports = router;
-
