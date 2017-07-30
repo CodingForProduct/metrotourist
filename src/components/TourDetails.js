@@ -9,7 +9,7 @@ class TourDetails extends Component {
         this.state = {
             destinationOptions: null,
             selectedDestination: null,
-            lastRetrievedSitesTourId: null,
+            lastRetrievedSitesTourName: null,
         }
         this.fetchSites = this.fetchSites.bind(this)
         this.handleDestinationSelection = this.handleDestinationSelection.bind(this)
@@ -17,24 +17,24 @@ class TourDetails extends Component {
     }
 
     componentWillMount() {
-        this.fetchSites(this.props.tour._id)
+        this.fetchSites(this.props.tour.tourName)
     }
 
     componentDidUpdate() {
-        const tourId = this.props.tour._id
-        if(!this.state.lastRetrievedSitesTourId || (this.state.lastRetrievedSitesTourId !== tourId)) {
-            this.fetchSites(tourId)
+        const tourName = this.props.tour.tourName
+        if(!this.state.lastRetrievedSitesTourName || (this.state.lastRetrievedSitesTourName !== tourName)) {
+            this.fetchSites(tourName)
         }
     }
 
-    fetchSites(tourId) {
-        const url = 'http://localhost:3001/api/sitelist/tourtitle?' + tourId;
+    fetchSites(tourName) {
+        const url = `http://localhost:3001/api/tours/${tourName}/sites`;
         return axios.get(url, null)
         .then((response) => {
             return this.setState((prevState, props) => {
                 return {
                     destinationOptions: response.data,
-                    lastRetrievedSitesTourId: tourId,
+                    lastRetrievedSitesTourName: tourName,
                 };
             });
         });
