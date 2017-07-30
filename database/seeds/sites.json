@@ -1,0 +1,100 @@
+[
+   {
+      "siteName": "Chinatown",
+      "tourTitle": "Downtown LA",
+      "longDescription": "Exploring LA Chinatown is a rewarding adventure. This colorful urban setting, near the city's civic and cultural center, explodes in a fantasy of sights, sounds and colors during Chinese New Year, Chinatown Summer Nights and each fall, Moon Festival. Every day of the year, Chinatown is a veritable feast for the senses.",
+      "website": "chinatownla.com",
+      "address": "943-951 N. Broadway, Los Angeles, CA 90012"
+   },
+   {
+      "siteName": "Descanso Gardens",
+      "tourTitle": "Pasadena",
+      "longDescription": "The 160-acre public garden is an urban retreat of year-round natural beauty, internationally renowned botanical collections and spectacular seasonal horticultural displays.",
+      "website": "www.descansogardens.org",
+      "address": "1418 Descanso Drive, Flintridge, CA 91011",
+      "phone": "(818) 949-4200"
+   },
+   {
+      "siteName": "El Capitan Theater",
+      "tourTitle": "Hollywood",
+      "longDescription": "Step into Hollywood's glittering past and be treated to an unparalleled movie-going experience powered by the most advanced cinema innovations. The legendary El Capitan Theater made it's debut on May 3, 1926 as Hollywood's first home of spoken drama. Fully restored to its original elegance. ",
+      "website": "elcapitantheatre.com/",
+      "address": "6838 Hollywood Boulevard, Los Angeles, CA 90028",
+      "phone": "1-800-DISNEY6"
+   },
+   {
+      "siteName": "Hard Rock Cafe",
+      "tourTitle": "Hollywood",
+      "longDescription": "Located at the Hollywood and Highland Center, beside the world-famous Dolby Theatre and just steps away from the TCL Chinese Theatre and Walk of Fame, the Hard Rock Cafe offers high energy entertainment and a world-class menu. The 20,000-square-foot cafe includes a live music area, bar, and two retail stores offering Hard Rock Cafe limited merchandise.",
+      "website": "www.hardrock.com/cafes/hollywood-on-hollywood-blvd",
+      "address": "6801 Hollywood Blvd, Hollywood, CA 90028",
+      "phone": "(323) 464-7625"
+   },
+   {
+      "siteName": "Kenneth Hahn State Recreation Area",
+      "tourTitle": "Culver City",
+      "longDescription": "Kenneth Hahn State Recreation Area is an urban oasis and one of the largest inner-city parks and regional open spaces in greater Los Angeles. This lush and peaceful 338-acre recreational retreat offers hikers challenging trails that provide some of the best and most breathtaking views unlike any other in the city!",
+      "website": "parks.lacounty.gov/wps/portal/dpr/Parks/Kenneth_Hahn_State_Recreation_Area",
+      "address": "4100 South La Cienega Boulevard, Los Angeles, CA 90056",
+      "phone": "(323) 298-3660"
+   },
+   {
+      "siteName": "Little Tokyo",
+      "tourTitle": "Downtown LA",
+      "longDescription": "Amid the intense activity of Downtown LA, the 132 year old community of Little Tokyo has emerged as one of LA's coolest places to dine, shop and find entertainment. Little Tokyo offers great bars, live performances, world-class museums and affordable and eclectic shopping.",
+      "website": "visitlittletokyo.com",
+      "address": "106 Aliso Street, Los Angeles, CA 90012",
+      "phone": "(213) 880-6875"
+   },
+   {
+      "siteName": "Norton Simon Museum",
+      "tourTitle": "Pasadena",
+      "longDescription": "The Norton Simon Museum is known around the world as one of the most remarkable private art collections ever assembled. Approximately 1,000 works from the permanent collection of 12,000 objects are on view in the galleries and sculpture garden throughout the year.",
+      "website": "www.nortonsimon.org",
+      "address": "411 West Colorado Blvd, Pasadena, CA 91105",
+      "phone": "(626) 449-6840"
+   },
+   {
+      "siteName": "Olvera Street",
+      "tourTitle": "Downtown LA",
+      "longDescription": "Olvera Street, known as the birthplace of Los Angeles, is a Mexican Marketplace that recreates a romantice 'Old Los Angeles' with a block long narrow tree-shaded brick-lined market with old structures, painted stalls, street vendors, cafes, restaurants and gift shops. Olvera Street was created in 1930.",
+      "website": "www.olvera-street.com",
+      "address": "845 Alameda Street, Los Angeles, CA 90012",
+      "phone": "(323) 464-7625"
+   },
+   {
+      "siteName": "Pacific Asia Museum",
+      "tourTitle": "Pasadena",
+      "longDescription": "The Pacific Asia Museum was founded in 1971 and houses some 15,000 rare and representative examples of art throughout Asia and the Pacific Islands.",
+      "website": "china.usc.edu/usc-pacific-asia-museum",
+      "address": "46 North Los Robles Ave., Pasadena, CA 91101",
+      "phone": "(626) 449-2742"
+   },
+   {
+      "siteName": "Santa Monica Beach",
+      "tourTitle": "Santa Monica",
+      "longDescription": "3.5 miles of clean white sand and light ocean waves makes for grade-A beachcombing, swimming, surfing, paddleboarding, and biking along the Marvin Braude Bike Trail."
+   },
+   {
+      "siteName": "Santa Monica Pier",
+      "tourTitle": "Santa Monica",
+      "longDescription": "The Santa Monica Pier, with its iconic Ferris wheel, is packed with family-friendly activities, restaurants and shops. It has stunning views and over a century's worth of history.",
+      "website": "santamonicapier.org",
+      "address": "200 Santa Monica Pier, Santa Monica, CA 90401",
+      "phone": "(310) 458-8901"
+   },
+   {
+      "siteName": "Shopping",
+      "tourTitle": "Santa Monica",
+      "longDescription": "People may think of Santa Monica as a laid-back beachside city, but Santa Monica's shopping options rival that of Manhattan and Beverly Hills. Santa Monica shopping ranges from one-of-a-kind artwork and eco-inspired housewares to iconic skater labels and straight-from-the-runway styles.",
+      "website": "www.santamonica.com"
+   },
+   {
+      "siteName": "TCL Chinese Theatre",
+      "tourTitle": "Hollywood",
+      "longDescription": "The TCL Chinese Theatre, formerly Grauman's Chinese Theatre had its grand opening on May 18, 1927. To visit Los Angeles and not see the TCL Chinese Theatre is like visiting China and not seeing the Great Wall.",
+      "website": "tclchinesetheatres.com",
+      "address": "6925 Hollywood Blvd, Hollywood, CA 90028",
+      "phone": "(323) 461-3331"
+   }
+]

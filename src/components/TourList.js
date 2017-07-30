@@ -25,7 +25,7 @@ class TourList extends Component {
         this.handleTourSelection = this.handleTourSelection.bind(this)
     }
     componentWillMount(){
-        const url = 'http://localhost:3001/tours';
+        const url = 'http://localhost:3001/api/tourlist';
         return axios.get(url, null)
         .then((response) => {
             return this.setState((prevState, props) => {
@@ -34,7 +34,9 @@ class TourList extends Component {
         });
     }
     handleTourSelection(tour) {
+
         this.setState((prev, props) => {
+            //console.log(tour)
             return {selectedTour: tour};
         });
     }
