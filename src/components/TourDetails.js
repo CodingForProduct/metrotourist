@@ -40,9 +40,9 @@ class TourDetails extends Component {
         });
     }
 
-    handleDestinationSelection(destination) {
+    handleDestinationSelection(tourDestination) {
         this.setState((prev, props) => {
-            return {selectedDestination: destination}
+            return {selectedDestination: tourDestination}
         })
     }
 
@@ -57,9 +57,7 @@ class TourDetails extends Component {
 
         let tourDestinations = []
         if(this.state.destinationOptions) {
-            console.log("State: ", this.state.destinationOptions)
             tourDestinations = this.state.destinationOptions.map((tourDestination) => {
-                console.log("Option: ", tourDestination)
                 return <li key={tourDestination._id} onClick={() => this.handleDestinationSelection(tourDestination)}>
                     {tourDestination.siteName}
                 </li>

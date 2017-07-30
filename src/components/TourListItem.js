@@ -11,10 +11,10 @@ class TourListItem extends Component {
                         {/*<img className="media-object" src={} />*/}
                     </div>
                     <div className="media-body">
-                        <div className="media-heading">Name: {tourListing.tourName}</div>
-                        <div className="media-heading">Description: {tourListing.description}</div>
-                        <div className="media-heading">Station: {tourListing.tourStation}</div>
-                        <div className="media-heading">Metro Line: {tourListing.tourLines}</div>
+                        <div className="media-heading"><b>Name:</b>  {tourListing.tourName}</div>
+                        <div className="media-heading"><b>About:</b> : {tourListing.description}</div>
+                        <div className="media-heading"><b>Station:</b> {tourListing.tourStation}</div>
+                        <div className="media-heading"><b>Metro Line:</b> {tourListing.tourLines}</div>
                     </div>
                 </div>
             </li>
