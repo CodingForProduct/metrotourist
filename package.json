@@ -25,7 +25,6 @@
   },
   "scripts": {
     "start": "node server.js",
-    "start-react": "react-scripts start",
     "start-api": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
