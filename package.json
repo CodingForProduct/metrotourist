@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "babel-cli": "^6.24.1",
     "body-parser": "^1.17.2",
     "cors": "^2.8.3",
     "express": "^4.15.3",
@@ -28,5 +29,23 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "engines": {
+    "node": "8.3.0"
+  },
+  "description": "A quick guide on how to get to the places / sights you want to go to using public transportation including recommended itineraries for 1st time visitors and day trips for locals.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingForProduct/metrotourist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodingForProduct/metrotourist/issues"
+  },
+  "homepage": "https://github.com/CodingForProduct/metrotourist#readme"
 }
