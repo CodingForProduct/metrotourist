@@ -19,7 +19,7 @@ router.get('/sitelistall', function(req, res, next){
     });
 });
 
-// get a list of all sites that belong to specified tour (Downtown 2b replaced by req.body.params)
+// get a list of all sites that belong to specified tour (Downtown 2b replaced by req.params)
 router.get('/tours/:tourName/sites', function(req, res, next){
     Site.find({tourTitle : req.params.tourName}).sort({siteName:1}).then(function(sites){
         res.send(sites);
