@@ -1,7 +1,21 @@
 {
   "name": "metrotourist",
   "version": "0.1.0",
+  "description": "A quick guide on how to get to the places / sights you want to go to using public transportation including recommended itineraries for 1st time visitors and day trips for locals.",
+  "main": "server.js",
   "private": true,
+  "engines": {
+    "node": "8.3.0"
+  },
+    "scripts": {
+    "start": "react-scripts start",
+    "start-api": "node server.js",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
   "dependencies": {
     "axios": "^0.16.2",
     "babel-cli": "^6.24.1",
@@ -19,22 +33,12 @@
     "react-router-dom": "^4.1.1",
     "youtube-api-search": "0.0.5"
   },
+
   "devDependencies": {
     "dotenv": "^4.0.0",
     "react-scripts": "1.0.7"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "start-api": "nodemon server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "engines": {
-    "node": "8.3.0"
-  },
-  "description": "A quick guide on how to get to the places / sights you want to go to using public transportation including recommended itineraries for 1st time visitors and day trips for locals.",
-  "main": "server.js",
+  "license": "MIT",
   "directories": {
     "test": "test"
   },
