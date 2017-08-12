@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const dbConnect = process.env.REACT_APP_SECRETDB;
+const dotenv = require('dotenv').config();
+const dbLocal = process.env.REACT_APP_SECRETDB;
 const mongoLab = process.env.REACT_APP_MONGOLAB_URI;
 
 
@@ -35,20 +36,13 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 
 
 // ----- MongoDB Configuration configuration -----
+
+
 mongoose.Promise = global.Promise;
-const URI = mongoLab;
 
-//||'mongodb://localhost/metrotourist'; //, ({useMongoClient:true})
-
-mongoose.connect('mongodb://localhost/metrotourist', { useMongoClient: true })
-// mongoose.connect(URI, function(err,res){
-//   if (err){
-//     console.log("Error connecting to " + URI + "  "+ err);
-//   }else{
-//     console.log("Succeeded connected to " + URI);
-//   }
-// });
-
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect('mongodb://localhost/metrotourist', { useMongoClient: true }); //above doesn't work
+}
 var db = mongoose.connection;
 
 db.on('error', function (err) {
